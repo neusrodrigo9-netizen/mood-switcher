@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Nunito+Sans:wght@500&family=Oswald:wght@500&family=Amatic+SC:wght@700&family=Merriweather:wght@500&family=Inter:wght@500&display=swap');
+
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.8s ease, color 0.8s ease, font-family 0.8s ease;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+#text {
+  font-size: 1.5em;
+  margin-top: 10px;
+  transition: color 0.6s ease;
+}
+
+/* CONTENIDOR IMATGE */
+#imageContainer {
+  position: relative;
+  display: inline-block;
+  width: 280px;
+  height: 280px;
+  margin: 25px 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 25px var(--neon-color, rgba(255, 255, 255, 0.3));
+  transition: box-shadow 0.7s ease;
+}
+
+#imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.6s ease;
+}
+
+#imageContainer img:hover {
+  transform: scale(1.05);
+}
+
+/* ✨ Aura neó */
+@keyframes auraPulse {
+  0% { box-shadow: 0 0 15px var(--neon-color), 0 0 30px var(--neon-color); }
+  50% { box-shadow: 0 0 35px var(--neon-color), 0 0 60px var(--neon-color); }
+  100% { box-shadow: 0 0 15px var(--neon-color), 0 0 30px var(--neon-color); }
+}
+
+#imageContainer {
+  animation: auraPulse 3s infinite ease-in-out;
+}
+
+/*BOTONS */
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.4s;
+}
+
+button:hover {
+  transform: scale(1.07);
+}
+
+/* Botó Reinicia neutre */
+#reset {
+  background-color: #888;
+  color: #fff;
+}
+
+/* COLORS, NEÓ I TIPOGRAFIES */
+
+/* FELIÇ */
+body.happy {
+  background: radial-gradient(circle at top, #fff6b8, #ffb84d);
+  color: #5c4300;
+  --neon-color: #ffdf64;
+  font-family: 'Baloo 2', sans-serif;
+}
+body.happy button {
+  background-color: #ffb703;
+  box-shadow: 0 0 12px #ffdf64;
+}
+
+/* TRIST */
+body.sad {
+  background: radial-gradient(circle at top, #a3c9ff, #22577a);
+  color: #e8f1ff;
+  --neon-color: #6eb5ff;
+  font-family: 'Nunito Sans', sans-serif;
+}
+body.sad button {
+  background-color: #3b82f6;
+  box-shadow: 0 0 12px #6eb5ff;
+}
+
+/* ENFADAT */
+body.angry {
+  background: radial-gradient(circle at top, #ffb3b3, #7f1d1d);
+  color: #fff0f0;
+  --neon-color: #ff5757;
+  font-family: 'Oswald', sans-serif;
+}
+body.angry button {
+  background-color: #c1121f;
+  box-shadow: 0 0 12px #ff5757;
+}
+
+/* RELAXAT */
+body.chill {
+  background: radial-gradient(circle at top, #c6f7d0, #68b684);
+  color: #003d27;
+  --neon-color: #a3f7bf;
+  font-family: 'Amatic SC', cursive;
+}
+body.chill button {
+  background-color: #60d394;
+  box-shadow: 0 0 12px #a3f7bf;
+}
+
+/* PREOCUPAT */
+body.worried {
+  background: radial-gradient(circle at top, #d6c2f0, #4a148c);
+  color: #f3e6ff;
+  --neon-color: #d3b4fc;
+  font-family: 'Merriweather', serif;
+}
+body.worried button {
+  background-color: #6a1b9a;
+  box-shadow: 0 0 12px #d3b4fc;
+}
+
+/* NEUTRAL */
+body.neutral {
+  background: linear-gradient(180deg, #f3f3f3, #cfcfcf);
+  color: #333;
+  --neon-color: rgba(180,180,180,0.6);
+  font-family: 'Inter', sans-serif;
+}
+body.neutral button {
+  background-color: #777;
+  box-shadow: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
